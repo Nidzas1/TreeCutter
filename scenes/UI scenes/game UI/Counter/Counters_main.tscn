@@ -1,0 +1,126 @@
+[gd_scene load_steps=9 format=3 uid="uid://cmtrgninef04i"]
+
+[ext_resource type="Theme" uid="uid://boyb1obh2pju4" path="res://themes/game_theme.tres" id="1_y20bm"]
+[ext_resource type="PackedScene" uid="uid://cfnaufg8eprcj" path="res://scenes/UI scenes/game UI/Counter/CoinsCounter.tscn" id="2_plwwh"]
+[ext_resource type="Script" path="res://scenes/UI scenes/game UI/Counter/Counters_main.cs" id="2_xgxau"]
+[ext_resource type="PackedScene" uid="uid://bmbu45ifo6lu0" path="res://scenes/UI scenes/game UI/Counter/ChoppedCounter.tscn" id="3_olwky"]
+[ext_resource type="Texture2D" uid="uid://cjiyqwb648guq" path="res://assets/ui/pause/Pause.png" id="4_feb8c"]
+[ext_resource type="PackedScene" uid="uid://d1fiu0s3w5xut" path="res://scenes/UI scenes/game UI/AxeLifePoints.tscn" id="6_vwxov"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmfj3"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7sw1a"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.423529, 0.266667, 0.0509804, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="CountersMain" type="Control"]
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -827.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_y20bm")
+script = ExtResource("2_xgxau")
+
+[node name="CoinsCounter" parent="." instance=ExtResource("2_plwwh")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -85.0
+offset_right = 0.0
+offset_bottom = 85.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ChoppedCounter" parent="." instance=ExtResource("3_olwky")]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 0.0
+offset_top = -85.0
+offset_right = 200.0
+offset_bottom = 85.0
+grow_vertical = 2
+
+[node name="PauseButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -45.0
+offset_right = 45.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_kmfj3")
+icon = ExtResource("4_feb8c")
+icon_alignment = 1
+expand_icon = true
+
+[node name="StrengthColorRect" type="Panel" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 130.0
+offset_top = 180.0
+offset_right = 230.0
+offset_bottom = 280.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7sw1a")
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 0
+offset_left = 173.5
+offset_top = 240.0
+offset_right = 326.5
+offset_bottom = 289.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "Score : 0"
+
+[node name="Toughness" type="Label" parent="."]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 160.0
+offset_right = 481.0
+offset_bottom = 188.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Toughness"
+
+[node name="AxeLifePoints" parent="." instance=ExtResource("6_vwxov")]
+layout_mode = 1
+offset_left = 383.0
+offset_top = 289.0
+offset_right = -16.0
+offset_bottom = 162.0
+
+[node name="CountersMainCanvas" type="CanvasLayer" parent="."]
+
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://degviirp4bp78"]
+
+[ext_resource type="PackedScene" uid="uid://dmy6rp8ibg7gy" path="res://scenes/UI scenes/game UI/ShopUI/Components/shop_component.tscn" id="1_1s3s6"]
+[ext_resource type="Script" path="res://scenes/UI scenes/game UI/Lose/OwnedAxesComponent.cs" id="2_e6rkc"]
+
+[node name="OwnedAxesComponent" instance=ExtResource("1_1s3s6")]
+script = ExtResource("2_e6rkc")
+
+[node name="Buy" parent="HBoxContainer/CenterContainer" index="0"]
+text = "Equip"
+
+[connection signal="pressed" from="HBoxContainer/CenterContainer/Buy" to="." method="_on_equip_pressed"]

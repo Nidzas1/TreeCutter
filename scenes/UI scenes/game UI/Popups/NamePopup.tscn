@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://cogeo8bx66gl1"]
+
+[ext_resource type="PackedScene" uid="uid://b0ooojthaj4jn" path="res://scenes/UI scenes/game UI/Counter/DataPanel.tscn" id="1_a3100"]
+[ext_resource type="Script" path="res://scenes/UI scenes/game UI/Popups/NamePopup.cs" id="2_4rpqi"]
+
+[node name="NamePopup" instance=ExtResource("1_a3100")]
+script = ExtResource("2_4rpqi")
+
+[node name="Panel" parent="." index="0"]
+offset_top = -141.0
+offset_bottom = 104.0
+
+[node name="NameLineEdit" type="LineEdit" parent="Panel" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.0
+offset_top = -39.0
+offset_right = 158.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 35
+placeholder_text = "Username"
+alignment = 1
+
+[node name="ShopLabel" parent="Panel" index="1"]
+offset_left = -160.5
+offset_right = 150.5
+text = "Player Name"
+
+[node name="Accept" type="Button" parent="Panel" index="3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -79.0
+offset_top = -86.0
+offset_right = 79.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "ACCEPT"
+
+[connection signal="pressed" from="Panel/Accept" to="." method="_on_accept_pressed"]

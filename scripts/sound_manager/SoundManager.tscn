@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://8lrnbt2o7t6y"]
+
+[ext_resource type="Script" path="res://scripts/sound_manager/SoundManager.cs" id="1_avfaw"]
+[ext_resource type="AudioStream" uid="uid://8n1d32dt01d3" path="res://assets/sounds/coin_sound.wav" id="2_jl1a7"]
+[ext_resource type="AudioStream" uid="uid://2s8c7atmqdcu" path="res://assets/sounds/buttonSound.wav" id="3_eufbh"]
+[ext_resource type="AudioStream" uid="uid://cjbe26nxmm6ul" path="res://assets/sounds/WoodThunk.wav" id="4_66j8q"]
+[ext_resource type="AudioStream" uid="uid://da5ddkcwqtafg" path="res://assets/sounds/ChoppedSound.wav" id="5_0mb22"]
+
+[node name="SoundManager" type="Node2D"]
+script = ExtResource("1_avfaw")
+
+[node name="CoinSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_jl1a7")
+
+[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_eufbh")
+
+[node name="ThunkSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_66j8q")
+
+[node name="ChoppedSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_0mb22")

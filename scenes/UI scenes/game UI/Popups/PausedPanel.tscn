@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxeldklfbo2kl"]
+
+[ext_resource type="PackedScene" uid="uid://b0ooojthaj4jn" path="res://scenes/UI scenes/game UI/Counter/DataPanel.tscn" id="1_8g7iw"]
+[ext_resource type="Script" path="res://scenes/UI scenes/game UI/Popups/PausedPanel.cs" id="2_4firc"]
+
+[node name="PausedPanel" instance=ExtResource("1_8g7iw")]
+size_flags_horizontal = 4
+script = ExtResource("2_4firc")
+
+[node name="Panel" parent="." index="0"]
+offset_top = -200.5
+offset_bottom = 200.5
+
+[node name="ShopLabel" parent="Panel" index="0"]
+offset_left = -87.0
+offset_top = 51.0
+offset_right = 87.0
+offset_bottom = 102.0
+text = "Paused"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" index="2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -86.5
+offset_right = 210.0
+offset_bottom = 156.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RetryButton" type="Button" parent="Panel/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+text = "Retry?"
+
+[node name="MainMenuButton" type="Button" parent="Panel/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "Main Menu"
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer" index="2"]
+layout_mode = 2
+text = "Note: Returning to main menu or retrying will not save
+highscore, wood or coins earned!"
+
+[connection signal="pressed" from="Panel/VBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

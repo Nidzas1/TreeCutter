@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmbu45ifo6lu0"]
+
+[ext_resource type="PackedScene" uid="uid://cac0npyyt3bl8" path="res://scenes/UI scenes/game UI/Counter/Counter.tscn" id="1_b57nb"]
+[ext_resource type="Texture2D" uid="uid://cu3mmtgisb5y7" path="res://assets/ui/counter/Wood.png" id="2_hrk0d"]
+
+[node name="ChoppedCounter" instance=ExtResource("1_b57nb")]
+
+[node name="Icon" parent="." index="1"]
+offset_left = 26.0
+offset_top = -22.5
+offset_right = 72.0
+offset_bottom = 22.5
+texture = ExtResource("2_hrk0d")
+expand_mode = 2

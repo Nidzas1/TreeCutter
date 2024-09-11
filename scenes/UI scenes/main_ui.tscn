@@ -1,0 +1,131 @@
+[gd_scene load_steps=6 format=3 uid="uid://36lo7ex6uhju"]
+
+[ext_resource type="Theme" uid="uid://boyb1obh2pju4" path="res://themes/game_theme.tres" id="1_wol6w"]
+[ext_resource type="Script" path="res://scripts/main_menu.cs" id="2_sffep"]
+[ext_resource type="PackedScene" uid="uid://bmbu45ifo6lu0" path="res://scenes/UI scenes/game UI/Counter/ChoppedCounter.tscn" id="3_ckxvk"]
+[ext_resource type="PackedScene" uid="uid://cfnaufg8eprcj" path="res://scenes/UI scenes/game UI/Counter/CoinsCounter.tscn" id="4_nthn4"]
+[ext_resource type="PackedScene" uid="uid://8lrnbt2o7t6y" path="res://scripts/sound_manager/SoundManager.tscn" id="5_oq3kv"]
+
+[node name="MainUI" type="Control"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_right = 250.0
+offset_bottom = 1000.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_wol6w")
+script = ExtResource("2_sffep")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -219.0
+offset_top = 316.0
+offset_right = 234.0
+offset_bottom = 408.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0.462745, 0.184314, 0.0235294, 1)
+theme_override_colors/font_outline_color = Color(0.466667, 0.231373, 0.0156863, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 66
+text = "Wood Chopper"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 413.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 16
+
+[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "▶"
+
+[node name="HowToPlayButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "How to play"
+
+[node name="BoxesButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Boxes coming soon!"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 20
+
+[node name="Shop" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "Shop"
+
+[node name="Account" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Account"
+
+[node name="Axes" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Axes"
+
+[node name="ChoppedCounter" parent="." instance=ExtResource("3_ckxvk")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -245.0
+offset_top = 41.5
+offset_right = -45.0
+offset_bottom = 131.5
+grow_horizontal = 2
+region_rect = Rect2(0, 64, 256, 128)
+
+[node name="CoinsCounter" parent="." instance=ExtResource("4_nthn4")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 45.0
+offset_top = 41.5
+offset_right = 245.0
+offset_bottom = 131.5
+grow_horizontal = 2
+region_rect = Rect2(0, 64, 256, 128)
+
+[node name="SoundManager" parent="." instance=ExtResource("5_oq3kv")]
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HowToPlayButton" to="." method="_on_how_to_play_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Shop" to="." method="_on_shop_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Account" to="." method="_on_account_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Axes" to="." method="_on_axes_pressed"]

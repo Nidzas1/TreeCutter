@@ -1,0 +1,91 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3i86pn5e7dfv"]
+
+[ext_resource type="PackedScene" uid="uid://b0ooojthaj4jn" path="res://scenes/UI scenes/game UI/Counter/DataPanel.tscn" id="1_sa1oi"]
+[ext_resource type="Script" path="res://scenes/UI scenes/game UI/Lose/Lose.cs" id="2_hkdj6"]
+[ext_resource type="Texture2D" uid="uid://doru0phpsha3m" path="res://assets/main game assets/background.png" id="3_id2go"]
+
+[node name="Lose" instance=ExtResource("1_sa1oi")]
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 4
+script = ExtResource("2_hkdj6")
+
+[node name="TextureRect" type="TextureRect" parent="." index="0"]
+layout_mode = 0
+offset_left = -664.0
+offset_top = -1137.0
+offset_right = 1659.0
+offset_bottom = 1210.0
+texture = ExtResource("3_id2go")
+
+[node name="Panel" parent="." index="1"]
+offset_top = -231.5
+offset_bottom = 231.5
+
+[node name="ShopLabel" parent="Panel" index="0"]
+offset_left = -133.0
+offset_top = 74.5
+offset_right = 138.0
+offset_bottom = 125.5
+text = "YOU LOSE!"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" index="2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 369.0
+offset_right = -20.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="tryagainButton" type="Button" parent="Panel/HBoxContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 8
+text = "Try Again?"
+
+[node name="mainmenuButton" type="Button" parent="Panel/HBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+text = "Main Menu
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" index="3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -42.0
+offset_right = 175.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="highScoreLabel" type="Label" parent="Panel/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Score:"
+
+[node name="woodChoppedLabel" type="Label" parent="Panel/VBoxContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Wood Chopped: "
+
+[node name="coinsEarnedLabel" type="Label" parent="Panel/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Coins Earned: "
+
+[connection signal="pressed" from="Panel/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/tryagainButton" to="." method="_on_tryagain_button_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/mainmenuButton" to="." method="_on_mainmenu_button_pressed"]

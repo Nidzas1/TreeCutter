@@ -1,0 +1,51 @@
+[
+	{
+		"ID": 0,
+		"Type": "oldAxe",
+		"Precision": 8,
+		"LifePoints": 3,
+		"Price": 0
+	},
+	{
+		"ID": 1,
+		"Type": "newAxe",
+		"Precision": 10,
+		"LifePoints": 3,
+		"Price": 50
+	},
+	{
+		"ID": 2,
+		"Type": "cobaltAxe",
+		"Precision": 12,
+		"LifePoints": 4,
+		"Price": 200
+	},
+	{
+		"ID": 3,
+		"Type": "stoneAxe",
+		"Precision": 7,
+		"LifePoints": 6,
+		"Price": 300
+	},
+	{
+		"ID": 4,
+		"Type": "amethystAxe",
+		"Precision": 12,
+		"LifePoints": 5,
+		"Price": 500
+	},
+	{
+		"ID": 5,
+		"Type": "redAxe",
+		"Precision": 14,
+		"LifePoints": 6,
+		"Price": 1000
+	},
+	{
+		"ID": 6,
+		"Type": "diamondAxe",
+		"Precision": 16,
+		"LifePoints": 7,
+		"Price": 1500
+	}
+]

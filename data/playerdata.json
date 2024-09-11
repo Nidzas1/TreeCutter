@@ -1,0 +1,25 @@
+{
+	"Username": "Player Name",
+	"EquippedAxe": {
+		"ID": 0,
+		"Type": "oldAxe",
+		"Precision": 10,
+		"LifePoints": 1,
+		"Price": 50
+	},
+	"HighScore": 5050,
+	"Currencies": {
+		"WoodChopped": 0,
+		"Coins": 0
+	},
+	"OwnedAxes": [
+		{
+			"ID": 0,
+			"Type": "oldAxe",
+			"Precision": 10,
+			"LifePoints": 1,
+			"Price": 50
+		}
+	],
+	"GamesPlayed": 0
+}

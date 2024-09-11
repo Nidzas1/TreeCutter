@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://mcwy0asikouh"]
+
+[ext_resource type="Texture2D" uid="uid://doru0phpsha3m" path="res://assets/main game assets/background.png" id="1_kxgml"]
+[ext_resource type="Theme" uid="uid://boyb1obh2pju4" path="res://themes/game_theme.tres" id="2_ogaya"]
+[ext_resource type="PackedScene" uid="uid://cmtrgninef04i" path="res://scenes/UI scenes/game UI/Counter/Counters_main.tscn" id="4_jms0m"]
+
+[node name="GameUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ogaya")
+
+[node name="GameUICanvas" type="CanvasLayer" parent="."]
+
+[node name="CountersMain" parent="GameUICanvas" instance=ExtResource("4_jms0m")]
+custom_minimum_size = Vector2(500, 200)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -250.0
+offset_right = 250.0
+offset_bottom = 200.0
+grow_vertical = 1
+
+[node name="background" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(79, 263)
+scale = Vector2(3.51856, 3.51856)
+texture = ExtResource("1_kxgml")

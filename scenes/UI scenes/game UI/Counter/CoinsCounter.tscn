@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfnaufg8eprcj"]
+
+[ext_resource type="PackedScene" uid="uid://cac0npyyt3bl8" path="res://scenes/UI scenes/game UI/Counter/Counter.tscn" id="1_ftmag"]
+
+[node name="CoinsCounter" instance=ExtResource("1_ftmag")]
