@@ -19,7 +19,7 @@ public partial class StaticData : Node
     }
     public List<Axe> GetAxes()
     {
-        var axeDataFile = FileAccess.Open("res://data/axedata.json", FileAccess.ModeFlags.Read);
+        var axeDataFile = FileAccess.Open("res://data/AxeData.json", FileAccess.ModeFlags.Read);
         var axeDataString = axeDataFile.GetAsText();
 
         var axeData = JsonConvert.DeserializeObject<List<Axe>>(axeDataString);
@@ -28,7 +28,7 @@ public partial class StaticData : Node
     }
     public PlayerData GetPlayerData()
     {
-        var playerDataFile = FileAccess.Open("user://playerdata.json", FileAccess.ModeFlags.Read);
+        var playerDataFile = FileAccess.Open("res://data/PlayerData.json", FileAccess.ModeFlags.Read);
         var playerDataString = playerDataFile.GetAsText();
         PlayerData playerData = JsonConvert.DeserializeObject<PlayerData>(playerDataString);
 
@@ -45,9 +45,9 @@ public partial class StaticData : Node
     }
     public void GeneratePlayerData()
     {
-        if (!FileAccess.FileExists("user://playerdata.json"))
+        if (!FileAccess.FileExists("res://data/PlayerData.json"))
         {
-            var WritePlayerData = FileAccess.Open("user:///playerdata.json", FileAccess.ModeFlags.Write);
+            var WritePlayerData = FileAccess.Open("res://data/PlayerData.json", FileAccess.ModeFlags.Write);
             PlayerData playerData = new PlayerData()
             {
                 Username = "",
@@ -127,7 +127,7 @@ public partial class StaticData : Node
         playerData.GamesPlayed += 1;
         string updatedPlayerData = JsonConvert.SerializeObject(playerData);
 
-        var playerDataFile = FileAccess.Open("user://playerdata.json", FileAccess.ModeFlags.Write);
+        var playerDataFile = FileAccess.Open("res://data/PlayerData.json", FileAccess.ModeFlags.Write);
         playerDataFile.StoreString(updatedPlayerData);
         playerDataFile.Close();
     }
@@ -153,3 +153,10 @@ public partial class StaticData : Node
 // LOOTBOXES THAT CHANGE APPEARANCE OF THE AXE
 // LOOTBOXES = WOOD CURRENCY
 // DIFFERENT RANK LOOTBOXES
+
+
+//IMPORTANT:
+
+// IN CASE YOU'RE USING WINDOWS MACHINE, CHANGE user://playerdata.json TO res://data/PlayerData.json, CHANGE user://axedata.json TO res://data/AxeData.json.
+// ALSO CHANGE NAME OF FILES IN FILE SYSTEM FROM playerdata.json to PlayeData.json, do equivelent to AxeData.json.
+// IN CASE YOU'RE USING ANDROID DEVICE, REVERT CHANGES.
