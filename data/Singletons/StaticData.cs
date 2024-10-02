@@ -157,6 +157,6 @@ public partial class StaticData : Node
 
 //IMPORTANT:
 
-// IN CASE YOU'RE USING ANDROID PHONE, CHANGE res://data/PlayerData.json TO user://playerdata.json , CHANGE res://data/AxeData.json TO user://axedata.json.
+// IN CASE YOU'RE USING ANDROID DEVICE, CHANGE res://data/PlayerData.json TO user://playerdata.json , CHANGE res://data/AxeData.json TO user://axedata.json.
 // ALSO CHANGE NAME OF FILES IN FILE SYSTEM FROM playerdata.json to PlayeData.json, do equivalent to AxeData.json.
-// IN CASE YOU'RE USING ANDROID DEVICE, REVERT CHANGES.
+// IN CASE YOU'RE USING WINDOWS MACHINE, REVERT CHANGES.
